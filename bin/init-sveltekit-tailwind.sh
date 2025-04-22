@@ -21,6 +21,16 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+# Check if the BASH_VERSION variable is set and non-empty
+
+if [ -z "$BASH_VERSION" ]; then
+  # If not BASH, print an error message to standard error
+  echo "Error: This script needs to be run with Bash." >&2
+  echo "Please execute it using: bash $0 $*" >&2
+  # Exit with error code 1
+  exit 1
+fi
+# --- End Bash Check ---
 
 set -e
 
